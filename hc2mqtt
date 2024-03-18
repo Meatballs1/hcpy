@@ -25,12 +25,12 @@ from HCSocket import HCSocket, now
 @click.option("--mqtt_certfile")
 @click.option("--mqtt_keyfile")
 @click.option("--mqtt_port", default=1883, type=int)
-@click.option("--mqtt_clientname")
+@click.option("--mqtt_clientname", default="hcpy")
 
 def hc2mqtt(config_file: str, mqtt_host: str, mqtt_prefix: str, mqtt_port: int, mqtt_username: str,
             mqtt_password: str, mqtt_ssl: bool, mqtt_cafile: str, mqtt_certfile: str, mqtt_keyfile: str, mqtt_clientname: str):
     click.echo(f"Hello {config_file=} {mqtt_host=} {mqtt_prefix=} {mqtt_port=} {mqtt_username=} {mqtt_password=} "
-               f"{mqtt_ssl=} {mqtt_cafile=} {mqtt_certfile=} {mqtt_keyfile=} {mqtt_clientname=}")
+			   f"{mqtt_ssl=} {mqtt_cafile=} {mqtt_certfile=} {mqtt_keyfile=} {mqtt_clientname=}")
 
     with open(config_file, "r") as f:
         devices = json.load(f)
